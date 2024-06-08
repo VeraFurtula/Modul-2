@@ -1,0 +1,30 @@
+h1,h2,h3,h4,h5,h6 { 
+    color: green 
+}
+* {
+    color:blue;
+}
+
+div.prviParagraf{
+    color:red;
+}
+
+span.siviTekst{
+    color:gray;
+}
+
+span#grimizniTekst{
+    color:Crimson;
+}
+
+input[type="text"]{
+    background-color:lightblue;
+}
+
+div.zeleniTekst{
+    color:green;
+}
+
+div.zeleniTekst  span.zutiTekst{
+    color:yellow;
+}   

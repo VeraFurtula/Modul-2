@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <title>Korisnici</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+          <nav class="navbar navbar-expand navbar-dark bg-dark">
+            <a class="navbar-brand" href="https://enastava.ftninformatika.com">
+              <img src="/images/logo.svg" />
+            </a>
+            <div class="navbar-nav">
+              <a class="nav-item nav-link" href="/index.html">Početna</a>
+              <a class="nav-item nav-link" href="/restorani">Restorani</a>
+              <a class="nav-item nav-link" href="/artikli">Artikli</a>
+              <a class="nav-item nav-link" href="/porudzbine">Porudžbine</a>
+              <a class="nav-item nav-link" href="/kategorije">Kategorije</a>
+              <a class="nav-item nav-link active" href="/korisnici">Korisnici</a>
+            </div>
+          </nav>
+          <nav class="navbar navbar-expand navbar-dark bg-secondary">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link" href="/korisnici">Prikaz svih</a>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-5 mx-auto">
+          <table class="table">
+            <tr>
+              <th>Korisničko ime</th>
+              <td>pera_peric</td>
+            </tr>
+            <tr>
+              <th>E-mail</th>
+              <td>pera_peric@gmail.com</td>
+            </tr>
+            <tr>
+              <th>Pol</th>
+              <td>muški</td>
+            </tr>
+            <tr>
+              <th>Administrator</th>
+              <td>da</td>
+            </tr>
+            <tr>
+              <th>Adresa dostave</th>
+              <td>Sutjeska 22, Novi Sad 21000</td>
+            </tr>
+            <tr>
+              <th>Porudžbine</th>
+              <td><a href="/porudzbine?korisnickoIme=pera_peric">porudzbine</a></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

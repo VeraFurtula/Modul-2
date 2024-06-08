@@ -1,0 +1,43 @@
+﻿Zadatak1
+
+Web čitači
+Web čitač je aplikacija koja je namenjena prikazu web stranica.
+Stranice se mogu dobaviti kako iz fajl-sistema, tako i putem TCP/IP mreze.
+Protokol kojim komuniciraju web čitač i web server je HTTP protokol. Danas su najpoznatiji sledeci web čitači:
+
+Microsoft Internet Explorer
+(http://www.microsoft.com/ie)
+Mozila 
+(http://www.mozilla.org)
+Opera
+(http://www.opera.com)
+
+Obratite pažnju da su svi nazivi web čitača u gornjoj listi linkovi koji upućuju na adrese navedene u zagradi.
+
+Zadatak2
+
+Produženje registracije
+
+Na ovoj stranici možete obaviti produženje registracije Vašeg automobila.
+Molimo Vas da popunite sledeći formular.
+
+Ime:
+Prezime: 
+JMBG: 
+Marka vozila:
+Tip vozila:
+Registarska oznaka:
+Pošalji 
+
+U gornjem combo box-u kao stavke nalaze se sledeće vrednosti: Mercedes, Peugeot i Renault.
+
+Korisnici koji su registrovali vozila
+Registrovani korisnici
+
+Zadatak3
+
+IE Video
+http://www.youtube.com/embed/qkM6RJf15cg
+Mozila 
+http://www.youtube.com/embed/8hRgzRSazIs
+Operahttp://www.youtube.com/embed/zaT7thTxyq8

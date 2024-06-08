@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restoran</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <ul>
+        <li><a href="restorani-dodavanje.html">Restorani</a></li>
+    </ul>
+    <form action="restorani.html" method="get">
+        <table class="restorani">
+            <caption>Dodavanje Restorana</caption>
+            <tr>
+                <th><label for="naziv">Naziv:</label>
+                </th>
+                <td><input type="text" id="naziv" name="naziv"></td>
+            </tr>
+            <tr>
+                <th>Kategorija:</th>
+                <td>
+                    <input type="checkbox" id="burger" name="burger" value="Burger">
+                    <label for="burger"> Burger</label><br>
+                    <input type="checkbox" id="burito" name="burito" value="Burito">
+                    <label for="burito"> Burito</label><br>
+                    <input type="checkbox" id="susi" name="susi" value="Susi">
+                    <label for="susi"> Suši</label><br>
+                    <input type="checkbox" id="sendvic" name="sendvic" value="Sendvic">
+                    <label for="sendvic"> Sendvič</label>
+                </td>
+            </tr>
+            <tr>
+                <th>Dostava:</th>
+                <td><input type="number" id="dostava" name="dostava" min="0" max="1000" /></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td><input type="submit" name="dodaj" value=" Dodaj "></td>
+            </tr>
+        </table>
+    </form>
+
+    <p>Najpopularniji restorani</p>
+    <ul class="najpopularnijiRestorani">
+        <li>
+            <a href="#">Restoran 1</a>
+            <progress value="1" max="5"></progress>
+            <span>1</span>
+        </li>
+        <li>
+            <a href="#">Restoran 2</a>
+            <progress value="2" max="5"></progress>
+            <span>2</span>
+        </li>
+        <li>
+            <a href="#">Restoran 3</a>
+            <progress value="5" max="5"></progress>
+            <span>5</span>
+        </li>
+        <li>
+            <a href="#">Restoran 4</a>
+            <progress value="3" max="5"></progress>
+            <span>3</span>
+        </li>
+        <li>
+            <a href="#">Restoran 5</a>
+            <progress value="4" max="5"></progress>
+            <span>4</span>
+        </li>
+
+    </ul>
+</body>
+
+</html>

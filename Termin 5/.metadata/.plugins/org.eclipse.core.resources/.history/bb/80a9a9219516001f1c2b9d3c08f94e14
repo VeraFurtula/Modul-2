@@ -1,0 +1,40 @@
+package com.ftninformatika.modul2.restoran.web.controller;
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.ftninformatika.jwd.modul2.termin5.bioskop.model.Korisnik;
+import com.ftninformatika.modul2.restoran.web.Dostava;
+
+@Controller
+@RequestMapping("/korisnici")
+public class KorisnikController {
+
+	private Dostava dostava;
+
+	@Autowired
+	public KorisnikController(Dostava dostava) {
+		this.dostava = dostava;
+	}
+
+	@GetMapping("") // bez @ResponseBody
+	public String getAll(ModelMap request) {
+		request.addAttribute("korisnici", dostava.getKorisnici().values());
+		return "korisnici"; // forwarding na template
+	}
+
+	@GetMapping("/prikaz") // bez @ResponseBody
+	public String get(ModelMap request,
+			@RequestParam String korisnickoIme) {
+		request.addAttribute("korisnik", dostava.getKorisnici().get(korisnickoIme));
+		return "korisnici-prikaz"; // forwarding na template
+	}
+	
+
+}

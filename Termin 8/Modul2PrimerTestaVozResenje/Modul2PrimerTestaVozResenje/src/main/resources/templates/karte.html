@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+	<title>Karte</title>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col">
+				<nav class="navbar navbar-expand navbar-dark bg-dark">
+				    <div class="navbar-nav">
+						<a class="nav-item nav-link" href="/index.html">Početna</a>
+						<a class="nav-item nav-link active" href="/karte">Karte</a>
+				    </div>
+				</nav>
+				<nav class="navbar navbar-expand navbar-dark bg-secondary">
+				    <div class="navbar-nav">
+						<a class="nav-item nav-link active" href="/karte">Prikaz svih</a>
+						<a class="nav-item nav-link" href="/karte/dodavanje">Dodavanje</a>
+				    </div>
+				</nav>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<form th:each="itKarta: ${karte}" th:id="${itKarta.id}" action="/karte/izmena" method="post">
+					<input type="hidden" name="id" th:value="${itKarta.id}">
+				</form>
+				<form>
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>Redni broj</th>
+								<th>Broj voza</th>
+								<th>Rang voza</th>
+								<th>Datum i vreme polaska voza</th>
+								<th>Cena karte voza</th>
+								<th>Datum i vreme prodaje</th>
+								<th>Kupac</th>
+								<th>Razred</th>
+								<th></th>
+							</tr>
+							<tr class="align-middle"> 
+								<th></th>
+								<th><input type="text" class="form-control" name="vozBroj" th:value="${param.vozBroj}"></th>
+								<th>
+									<select class="form-select" name="vozRang">
+  										<option value="">svi</option>
+  										<option value="Inter City" th:selected="${#strings.equals(param.vozRang, 'Inter City')}">Inter City</option>
+  										<option value="Brzi" th:selected="${#strings.equals(param.vozRang, 'Brzi')}">Brzi</option>
+										<option value="Regio" th:selected="${#strings.equals(param.vozRang, 'Regio')}">Regio</option>
+									</select>
+								</th>
+								<th>
+									<div class="input-group">
+										<span class="input-group-text">od</span>
+										<input type="datetime-local" class="form-control" name="vozDatumIVremePolaskaOd" th:value="${param.vozDatumIVremePolaskaOd}">
+									</div>
+									<div class="input-group">
+										<span class="input-group-text">do</span>
+										<input type="datetime-local" class="form-control" name="vozDatumIVremePolaskaDo"  th:value="${param.vozDatumIVremePolaskaDo}">
+									</div>
+								</th>
+								<th>
+									<div class="input-group">
+										<span class="input-group-text">od</span>
+										<input type="number" class="form-control" name="vozCenaKarteOd" th:value="${param.vozCenaKarteOd}">
+									</div>
+									<div class="input-group">
+										<span class="input-group-text">do</span>
+										<input type="number" class="form-control" name="vozCenaKarteDo" th:value="${param.vozCenaKarteDo}">
+									</div>
+								</th>
+								<th></th>
+								<th><input type="text" class="form-control" name="kupac" th:value="${param.kupac}"></th>
+								<th>
+									<div class="input-group">
+										<span class="input-group-text">od</span>
+										<input type="number" class="form-control" name="razredOd" th:value="${param.razredOd}">
+									</div>
+									<div class="input-group">
+										<span class="input-group-text">do</span>
+										<input type="number" class="form-control" name="razredDo" th:value="${param.razredDo}">
+									</div>
+								</th>
+								<th class="text-center"><input type="submit" class="btn btn-primary" value="Pretraži"></th>
+							</tr>
+						</thead>
+						<tbody class="table-group-divider">
+							<tr th:each="itKarta, status: ${karte}">
+								<td class="text-end" th:text="${status.count}"></td>
+								<td class="text-end" th:text="${itKarta.voz.broj}"></td>
+								<td class="text-center">
+									<img th:if="${#strings.equals(itKarta.voz.rang, 'Inter City')}" src="/images/Soko.svg" width="50">
+									<img th:if="${#strings.equals(itKarta.voz.rang, 'Brzi')}" src="/images/Brzi.jpg">
+									<img th:if="${#strings.equals(itKarta.voz.rang, 'Regio')}" src="/images/RE.jpg">
+								</td>
+								<td class="text-center" th:text="${#temporals.format(itKarta.voz.datumIVremePolaska, 'dd.MM.yyyy. HH:mm')}"></td>
+								<td class="text-end" th:text="${itKarta.voz.cenaKarte}"></td>
+								<td class="text-center" th:text="${#temporals.format(itKarta.datumIVremeProdaje, 'dd.MM.yyyy. HH:mm')}"></td>
+								<td th:text="${itKarta.kupac}"></td>
+								<td class="text-end"><input class="form-control" name="razred" th:form="${itKarta.id}" th:value="${itKarta.razred}"></td>
+								<td class="text-center"><button class="btn btn-primary" type=submit th:form="${itKarta.id}">Promeni razred</button></td>
+					    	</tr>
+						</tbody>
+					</table>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

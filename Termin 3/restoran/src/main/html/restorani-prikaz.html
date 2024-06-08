@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <title>Restorani</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+          <nav class="navbar navbar-expand navbar-dark bg-dark">
+            <a class="navbar-brand" href="https://enastava.ftninformatika.com">
+              <img src="/images/logo.svg" />
+            </a>
+            <div class="navbar-nav">
+              <a class="nav-item nav-link" href="/index.html">Početna</a>
+              <a class="nav-item nav-link active" href="/restorani">Restorani</a>
+              <a class="nav-item nav-link" href="/artikli">Artikli</a>
+              <a class="nav-item nav-link" href="/porudzbine">Porudžbine</a>
+              <a class="nav-item nav-link" href="/kategorije">Kategorije</a>
+              <a class="nav-item nav-link" href="/korisnici">Korisnici</a>
+            </div>
+          </nav>
+          <nav class="navbar navbar-expand navbar-dark bg-secondary">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link" href="/restorani">Prikaz svih</a>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-5 mx-auto">
+          <table class="table">
+            <tr>
+              <th>Naziv</th>
+              <td>Restoran 1</td>
+            </tr>
+            <tr>
+              <th>Cena dostave</th>
+              <td>150.0</td>
+            </tr>
+            <tr>
+              <th>Adresa</th>
+              <td>Bulevar Oslobodjenja 119, Novi Sad 21000</td>
+            </tr>
+            <tr>
+              <th>Kategorije</th>
+              <td>
+                <ul>
+                  <li>
+                    <a href="/kategorije/prikaz?id=1">Burgeri</a>
+                  </li>
+                  <li>
+                    <a href="/kategorije/prikaz?id=2">Sendvici</a>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>Artikli</th>
+              <td>
+                <ul>
+                  <li>
+                    <a href="/artikli/prikaz?id=1">Dupli burger</a>
+                    <p>
+                      Burger meso 120 grama, toljeni sir, burger majonez, heinz kečap, ajsberg, kiseli
+                      krastavac
+                    </p>
+                    <p>650.0 RSD</p>
+                  </li>
+                  <li>
+                    <a href="/artikli/prikaz?id=2">Pileći burger</a>
+                    <p>Pileći burger, tost sir, pančeta, burger majonez, ajsberg, paradajz</p>
+                    <p>550.0 RSD</p>
+                  </li>
+                  <li>
+                    <a href="/artikli/prikaz?id=3">Indeks sendvič</a>
+                    <p>Praška šunka, sir, šampinjoni</p>
+                    <p>320.0 RSD</p>
+                  </li>
+                  <li>
+                    <a href="/artikli/prikaz?id=4">Vratolomija sendvič</a>
+                    <p>Suvi vrat, sir, jaja</p>
+                    <p>290.0 RSD</p>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th></th>
+              <td><a href="/porudzbine?restoranId=1">porudzbine</a></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

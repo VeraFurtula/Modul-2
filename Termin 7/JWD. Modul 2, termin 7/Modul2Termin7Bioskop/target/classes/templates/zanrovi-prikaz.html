@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+	<title>Žanrovi</title>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col">
+				<nav class="navbar navbar-expand navbar-dark bg-dark">
+					<a class="navbar-brand" href="https://enastava.ftninformatika.com">
+				    	<img src="/images/logo.svg">
+					</a>
+				    <div class="navbar-nav">
+						<a class="nav-item nav-link" href="/index.html">Početna</a>
+						<a class="nav-item nav-link active" href="/zanrovi">Žanrovi</a>
+						<a class="nav-item nav-link" href="/filmovi">Filmovi</a>
+						<a class="nav-item nav-link" href="/projekcije">Projekcije</a>
+						<a class="nav-item nav-link" href="/korisnici">Korisnici</a>
+				    </div>
+				</nav>
+				<nav class="navbar navbar-expand navbar-dark bg-secondary">
+				    <div class="navbar-nav">
+						<a class="nav-item nav-link" href="/zanrovi">Prikaz svih</a>
+						<a class="nav-item nav-link" href="/zanrovi/dodavanje">Dodavanje</a>
+				    </div>
+				</nav>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-5 mx-auto">
+				<form action="/zanrovi/izmena" method="post">
+					<input type="hidden" name="id" th:value="${zanr.id}">
+					<div class="row my-2">
+						<label class="col-2 col-form-label text-end">Naziv</label>
+						<div class="col-10">
+							<input type="text" class="form-control" name="naziv" th:value="${zanr.naziv}">
+    					</div>
+  					</div>
+  					<div class="row my-2">
+						<div class="col-2"></div>
+						<div class="col-10">
+							<button type="submit" class="btn btn-primary w-100">Izmeni</button>
+						</div>
+					</div>
+  				</form>
+				<form action="/zanrovi/brisanje" method="post">
+					<input type="hidden" name="id" th:value="${zanr.id}">
+  					<div class="row my-2">
+						<div class="col-2"></div>
+						<div class="col-10">
+							<button type="submit" class="btn btn-primary w-100">Obriši</button>
+						</div>
+					</div>
+  				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

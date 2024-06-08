@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+	<script type="text/javascript" src="/js/pozivi-dodavanje.js"></script>
+	<title>Pozivi</title>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col">
+				<nav class="navbar navbar-expand navbar-dark bg-dark">
+				    <div class="navbar-nav">
+						<a class="nav-item nav-link" href="/index.html">Početna</a>
+						<a class="nav-item nav-link active" href="/pozivi">Pozivi</a>
+				    </div>
+				</nav>
+				<nav class="navbar navbar-expand navbar-dark bg-secondary">
+				    <div class="navbar-nav">
+						<a class="nav-item nav-link" href="/pozivi">Prikaz svih</a>
+						<a class="nav-item nav-link active" href="/pozivi/dodavanje">Dodavanje</a>
+				    </div>
+				</nav>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-6 mx-auto">
+				<form action="/pozivi/dodavanje" method="post">
+					<div class="row my-2">
+						<label class="col-4 col-form-label text-end">Datum i vreme</label>
+						<div class="col-8">
+							<input type="datetime-local" class="form-control" name="datumIVreme">
+							<small class="text-danger"></small>
+    					</div>
+  					</div>
+					<div class="row my-2">
+						<label class="col-4 col-form-label text-end">Ulica</label>
+						<div class="col-8">
+							<input type="text" class="form-control" name="ulica">
+							<small class="text-danger"></small>
+    					</div>
+  					</div>
+					<div class="row my-2">
+						<label class="col-4 col-form-label text-end">Broj</label>
+						<div class="col-8">
+							<input type="number" class="form-control" name="broj">
+							<small class="text-danger"></small>
+    					</div>
+  					</div>
+					<div class="row my-2">
+						<label class="col-4 col-form-label text-end">Vozilo</label>
+						<div class="col-8">
+							<select class="form-select" name="voziloId">
+								<option value="0">odaberi</option>
+								<option th:each="itVozilo: ${vozila}" th:value="${itVozilo.id}" th:text="${itVozilo.broj}"></option>
+							</select>
+							<small class="text-danger"></small>
+    					</div>
+  					</div>
+  					<div class="row my-2">
+						<div class="col-4"></div>
+						<div class="col-8">
+							<button type="submit" class="btn btn-primary w-100">Dodaj</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="jakarta.validation.constraints.NotBlank"/>
+    <fullyQualifiedTypeName name="com.ftninformatika.jwd.modul2.termin6.dostava.dto.ArtikalDTOGet"/>
+    <fullyQualifiedTypeName name="com.ftninformatika.jwd.modul2.termin6.dostava.service.Dostava"/>
+    <fullyQualifiedTypeName name="com.ftninformatika.jwd.modul2.termin6.dostava.model.Artikal"/>
+    <fullyQualifiedTypeName name="com.informatika.jwd.modul2.termin6.dostava.dto.validation.Validation"/>
+    <fullyQualifiedTypeName name="com.ftninformatika.jwd.modul2.termin6.dostava.model.Restoran"/>
+    <fullyQualifiedTypeName name="com.ftninformatika.jwd.modul2.termin6.dostava.service.RestoranService"/>
+    <fullyQualifiedTypeName name="com.ftninformatika.jwd.modul2.termin6.dostava.service.ArtikalService"/>
+    <fullyQualifiedTypeName name="com.ftninformatika.jwd.modul2.termin6.dostava.dto.ArtikalDTOAddUpdate"/>
+</qualifiedTypeNameHistroy>

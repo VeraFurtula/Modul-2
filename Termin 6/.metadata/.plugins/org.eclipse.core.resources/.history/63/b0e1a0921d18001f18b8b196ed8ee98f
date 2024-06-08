@@ -1,0 +1,79 @@
+package com.ftninformatika.jwd.modul2.termin6.dostava.service.impl;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.NoSuchElementException;
+
+import org.modelmapper.ModelMapper;
+
+import com.ftninformatika.jwd.modul2.termin6.bioskop.model.Projekcija;
+import com.ftninformatika.jwd.modul2.termin6.dostava.dto.ArtikalDTOAddUpdate;
+import com.ftninformatika.jwd.modul2.termin6.dostava.dto.ArtikalDTOGet;
+import com.ftninformatika.jwd.modul2.termin6.dostava.model.Artikal;
+import com.ftninformatika.jwd.modul2.termin6.dostava.service.ArtikalService;
+import com.ftninformatika.jwd.modul2.termin6.dostava.service.Dostava;
+
+import jakarta.validation.Valid;
+
+public class InMemoryArtikalService implements ArtikalService {
+
+	private final Dostava dostava;
+	private final ModelMapper mapper = new ModelMapper();
+
+	public InMemoryArtikalService(Dostava dostava) {
+		this.dostava = dostava;
+	}
+
+	private ArtikalDTOGet createDTO(Artikal artikal) {
+		return mapper.map(artikal, ArtikalDTOGet.class);
+	}
+	
+	private Collection<ArtikalDTOGet> createDTO(Collection<Artikal> artikli) {
+		Collection<ArtikalDTOGet> artikalDTOs = new ArrayList<>();
+		for (Artikal itArtikal: artikli) {
+			ArtikalDTOGet artikalDTO = createDTO(itArtikal);
+			artikalDTOs.add(artikalDTO);
+		}
+		return artikalDTOs;
+	}
+	
+	@Override
+	public ArtikalDTOGet get(long id) {
+		Artikal artikal = dostava.getArtikli().get(id);
+		if (artikal == null) {
+			throw new NoSuchElementException("Artikal nije pronađen!");
+		}
+		return createDTO(artikal);
+	}
+
+	@Override
+	public Collection<ArtikalDTOGet> getAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Collection<ArtikalDTOGet> get(long restoranId, String naziv, String opis, double cena) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void add(@Valid ArtikalDTOAddUpdate artikalDTO) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void update(@Valid ArtikalDTOAddUpdate artikalDTO) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void delete(long id) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

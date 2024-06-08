@@ -1,0 +1,11 @@
+﻿Za početak pređite detaljno materiju iz Termin1.zip i pokušajte da uradite zadatke.
+Takođe prođite i koroz HTML5_Primeri_Dodatno.zip, ali samo deo koji se odnosi na HTML, bez CSS dela.
+
+HTML je veoma široka oblast.
+Na kursu JWD se radi samo osnove HTML i to samo jedan čas, što sigurno nije dovoljno za dobro poznavanje HTML.
+Na kursu FED se HTML radi nekoliko termina.  
+
+Kada budete savladali date materijle okrenite se sajtu w3schools.
+Na linku (https://www.w3schools.com/html/default.asp) dat je online tutorijal koji u detalje objašnjava HTML tagove i daje primeri njihovog korišćenja (preko 100 primera).
+Na kraju tutorijala imate čak i test da proverite vaše zanje.
+Za prelaženje tog tutorijala trebaće Vam optimistički 7-10 dana. 

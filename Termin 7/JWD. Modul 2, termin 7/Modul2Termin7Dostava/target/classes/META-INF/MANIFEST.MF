@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Build-Jdk-Spec: 17
+Implementation-Title: Dostava
+Implementation-Version: 0.0.7-SNAPSHOT
+Main-Class: com.ftninformatika.jwd.modul2.termin7.dostava.Application
+Created-By: Maven Integration for Eclipse
+

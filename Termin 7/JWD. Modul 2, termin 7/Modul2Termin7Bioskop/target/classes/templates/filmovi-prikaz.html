@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+	<title>Filmovi</title>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col">
+				<nav class="navbar navbar-expand navbar-dark bg-dark">
+					<a class="navbar-brand" href="https://enastava.ftninformatika.com">
+				    	<img src="/images/logo.svg">
+					</a>
+				    <div class="navbar-nav">
+						<a class="nav-item nav-link" href="/index.html">Početna</a>
+						<a class="nav-item nav-link" href="/zanrovi">Žanrovi</a>
+						<a class="nav-item nav-link active" href="/filmovi">Filmovi</a>
+						<a class="nav-item nav-link" href="/projekcije">Projekcije</a>
+						<a class="nav-item nav-link" href="/korisnici">Korisnici</a>
+				    </div>
+				</nav>
+				<nav class="navbar navbar-expand navbar-dark bg-secondary">
+				    <div class="navbar-nav">
+						<a class="nav-item nav-link" href="/filmovi">Prikaz svih</a>
+						<a class="nav-item nav-link" href="/filmovi/dodavanje">Dodavanje</a>
+				    </div>
+				</nav>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-5 mx-auto">
+				<form action="/filmovi/izmena" method="post">
+					<input type="hidden" name="id" th:value="${film.id}">
+					<div class="row my-2">
+						<label class="col-2 col-form-label text-end">Naziv</label>
+						<div class="col-10">
+							<input type="text" class="form-control" name="naziv" th:value="${film.naziv}">
+    					</div>
+  					</div>
+					<fieldset class="row my-2">
+						<legend class="col-2 col-form-label pt-0 text-end">Žanr</legend>
+						<div class="col-10">
+							<div class="form-check" th:each="itZanr: ${zanrovi}">
+								<input class="form-check-input" type="checkbox" name="zanrIds" th:value="${itZanr.id}" th:checked="${#lists.contains(film.zanrovi, itZanr)}">
+								<label class="form-check-label" th:text="${itZanr.naziv}">žanr 1</label>
+							</div>
+						</div>
+					</fieldset>
+					<div class="row my-2">
+						<label class="col-2 col-form-label text-end">Trajanje</label>
+						<div class="col-10">
+							<input type="number" class="form-control" name="trajanje" th:value="${film.trajanje}">
+    					</div>
+  					</div>
+  					<div class="row my-2">
+						<div class="col-2"></div>
+						<div class="col-10">
+							<button type="submit" class="btn btn-primary w-100">Izmeni</button>
+						</div>
+					</div>
+  				</form>
+				<form action="/filmovi/brisanje" method="post">
+					<input type="hidden" name="id" th:value="${film.id}">
+  					<div class="row my-2">
+						<div class="col-2"></div>
+						<div class="col-10">
+							<button type="submit" class="btn btn-primary w-100">Obriši</button>
+						</div>
+					</div>
+  				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

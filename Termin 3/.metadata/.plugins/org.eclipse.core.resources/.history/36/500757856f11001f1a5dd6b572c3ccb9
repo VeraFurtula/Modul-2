@@ -1,0 +1,5 @@
+package com.ftninformatika.modul2.restoran.web.controller;
+
+public class KategorijaController {
+
+}

@@ -1,0 +1,32 @@
+package com.ftninformatika.jwd.modul2.termin6.dostava.dto;
+
+
+import com.informatika.jwd.modul2.termin6.dostava.dto.validation.Validation;
+
+import jakarta.validation.constraints.FutureOrPresent;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Positive;
+
+public abstract class ArtikalDTO {
+	@Positive(message = "ID mora biti validan.", groups = {Validation.Update.class})
+	private long id;
+
+	@NotNull(message = "Datum i vreme moraju biti zadati.", groups = {Validation.Add.class, Validation.Update.class})
+	@FutureOrPresent(message = "Datum i vreme ne smeju biti u prošlosti.", groups = {Validation.Add.class, Validation.Update.class})
+	private LocalDateTime datumIVreme;
+
+	@NotBlank(message = "Tip ne sme biti prazan.", groups = {Validation.Add.class, Validation.Update.class})
+	@Pattern(regexp = "2D|3D|4D", message = "Tip mora biti 2D, 3D ili 4D.", groups = {Validation.Add.class, Validation.Update.class})
+	private String tip;
+	
+	@Min(value = 1, message = "Sala ne sme biti manja od 1.", groups = {Validation.Add.class, Validation.Update.class})
+	@Max(value = 3, message = "Sala ne sme biti veća od 3.", groups = {Validation.Add.class, Validation.Update.class})
+	private int sala;
+
+	@Positive(message = "Cena mora biti pozitivna.", groups = {Validation.Add.class, Validation.Update.class})
+	private double cenaKarte;
+}

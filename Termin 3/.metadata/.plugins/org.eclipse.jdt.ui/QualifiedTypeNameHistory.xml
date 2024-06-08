@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ResponseBody"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="com.ftninformatika.modul2.restoran.web.Dostava"/>
+    <fullyQualifiedTypeName name="com.ftninformatika.modul2.restoran.model.StavkaPorudzbine"/>
+    <fullyQualifiedTypeName name="com.ftninformatika.modul2.restoran.model.Restoran"/>
+    <fullyQualifiedTypeName name="com.ftninformatika.modul2.restoran.model.Kategorija"/>
+    <fullyQualifiedTypeName name="com.ftninformatika.modul2.restoran.model.Porudzbina"/>
+    <fullyQualifiedTypeName name="com.ftninformatika.modul2.restoran.model.Artikal"/>
+</qualifiedTypeNameHistroy>

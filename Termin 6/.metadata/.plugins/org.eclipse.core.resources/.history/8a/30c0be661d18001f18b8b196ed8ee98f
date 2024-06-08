@@ -1,0 +1,64 @@
+package com.ftninformatika.jwd.modul2.termin6.dostava.service.impl;
+
+import java.util.Collection;
+
+import org.modelmapper.ModelMapper;
+
+import com.ftninformatika.jwd.modul2.termin6.dostava.dto.ArtikalDTOAddUpdate;
+import com.ftninformatika.jwd.modul2.termin6.dostava.dto.ArtikalDTOGet;
+import com.ftninformatika.jwd.modul2.termin6.dostava.model.Artikal;
+import com.ftninformatika.jwd.modul2.termin6.dostava.service.ArtikalService;
+import com.ftninformatika.jwd.modul2.termin6.dostava.service.Dostava;
+
+import jakarta.validation.Valid;
+
+public class InMemoryArtikalService implements ArtikalService {
+
+	private final Dostava dostava;
+	private final ModelMapper mapper = new ModelMapper();
+
+	public InMemoryArtikalService(Dostava dostava) {
+		this.dostava = dostava;
+	}
+
+	private ArtikalDTOGet createDTO(Artikal artikal) {
+		return mapper.map(artikal, ArtikalDTOGet.class);
+	}
+	
+	@Override
+	public ArtikalDTOGet get(long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Collection<ArtikalDTOGet> getAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Collection<ArtikalDTOGet> get(long restoranId, String naziv, String opis, double cena) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void add(@Valid ArtikalDTOAddUpdate artikalDTO) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void update(@Valid ArtikalDTOAddUpdate artikalDTO) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void delete(long id) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

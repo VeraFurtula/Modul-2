@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <title>Porudzbine</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+          <nav class="navbar navbar-expand navbar-dark bg-dark">
+            <a class="navbar-brand" href="https://enastava.ftninformatika.com">
+              <img src="/images/logo.svg" />
+            </a>
+            <div class="navbar-nav">
+              <a class="nav-item nav-link" href="/index.html">Početna</a>
+              <a class="nav-item nav-link" href="/restorani">Restorani</a>
+              <a class="nav-item nav-link" href="/artikli">Artikli</a>
+              <a class="nav-item nav-link active" href="/porudzbine">Porudžbine</a>
+              <a class="nav-item nav-link" href="/kategorije">Kategorije</a>
+              <a class="nav-item nav-link" href="/korisnici">Korisnici</a>
+            </div>
+          </nav>
+          <nav class="navbar navbar-expand navbar-dark bg-secondary">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link" href="/porudzbine">Prikaz svih</a>
+            </div>
+          </nav>
+        </div>
+      </div>
+                <table class="table">
+            <tr>
+              <th>Id</th>
+              <td th:text="${porudzbina.id}">1</td>
+            </tr>
+            <tr>
+              <th>Datum</th>
+              <td th:text="${#temporals.format(porudzbina.datumIVreme, 'dd.MM.yyyy. HH:mm')}">
+                01.01.2020. 00:00
+              </td>
+            </tr>
+            <tr>
+              <th>Korisnik</th>
+              <td>
+                <a th:href="|/korisnici/prikaz?korisnickoIme=${porudzbina.korisnik.korisnickoIme}|" th:text="${porudzbina.korisnik.korisnickoIme}">korisnik 1</a>
+              </td>
+            </tr>
+            <tr>
+              <th>Restoran</th>
+              <td>
+                <a th:href="|/restorani/prikaz?id=${porudzbina.restoran.id}|" th:text="${porudzbina.restoran.naziv}">restoran 1</a>
+              </td>
+            </tr>
+            <tr>
+              <th>Stavke porudžbine</th>
+              <td>
+                <ul>
+                  <li th:each="itStavka: ${porudzbina.stavkePorudzbine}" th:text="|${itStavka.kolicina} x ${itStavka.artikal.naziv} ${itStavka.artikal.cena}|"></li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>Cena dostave</th>
+              <td th:text="|${porudzbina.restoran.cenaDostave} RSD|">200.0 RSD</td>
+            </tr>
+            <tr>
+              <th>Adresa dostave</th>
+              <td th:text="|${porudzbina.korisnik.adresa.ulica} ${porudzbina.korisnik.adresa.broj}|">
+                adresa
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

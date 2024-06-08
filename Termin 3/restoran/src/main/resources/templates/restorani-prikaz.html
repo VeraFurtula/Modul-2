@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <title>Restorani</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+          <nav class="navbar navbar-expand navbar-dark bg-dark">
+            <a class="navbar-brand" href="https://enastava.ftninformatika.com">
+              <img src="/images/logo.svg" />
+            </a>
+            <div class="navbar-nav">
+              <a class="nav-item nav-link" href="/index.html">Početna</a>
+              <a class="nav-item nav-link active" href="/restorani">Restorani</a>
+              <a class="nav-item nav-link" href="/artikli">Artikli</a>
+              <a class="nav-item nav-link" href="/porudzbine">Porudžbine</a>
+              <a class="nav-item nav-link" href="/kategorije">Kategorije</a>
+              <a class="nav-item nav-link" href="/korisnici">Korisnici</a>
+            </div>
+          </nav>
+          <nav class="navbar navbar-expand navbar-dark bg-secondary">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link" href="/restorani">Prikaz svih</a>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-5 mx-auto">
+          <table class="table">
+          	<tr><th>Naziv</th><td th:text="${restoran.naziv}">Restoran 1</td></tr>
+			<tr><th>Cena dostave</th><td th:text="${restoran.cenaDostave}">150.0</td></tr>
+			<tr><th>Adresa</th><td th:text="${restoran.adresa.ulica} + ' ' + ${restoran.adresa.broj} + ', ' + ${restoran.adresa.grad} + ' ' + ${restoran.adresa.postanskiBroj}">Bulevar Oslobodjenja 119, Novi Sad 21000</td></tr>
+			<tr>
+				<th>Kategorije</th>
+					<td>
+						<ul>
+							<li th:each="itKategorija: ${restoran.kategorije}"><a th:href="|/kategorije/prikaz?id=${itKategorija.id}|" th:text="${itKategorija.naziv}">Kategorija 1</a></li>
+						</ul>
+					</td>
+			</tr>			
+			<tr>
+				<th>Artikli</th>
+			<td>
+						<ul>
+							<li th:each="itArtikal: ${restoran.artikli}"><a th:href="|/artikli/prikaz?id=${itArtikal.id}|" th:text="${itArtikal.naziv}">Artikal 1</a>
+							<p th:text="${itArtikal.opis}">opis</p>
+							<p th:text="${itArtikal.cena}">cena</p>
+							</li>	
+						</ul>
+			</td>
+			</tr>	
+           <tr><th></th><td><a th:href="|/restorani?restoranId=${restoran.id}|">porudzbine</a></td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

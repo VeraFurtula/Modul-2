@@ -1,0 +1,62 @@
+ul.najpopularnijiRestorani {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+    border: 10px solid #1e90ff;
+    width: 1350px;
+}
+
+ul.najpopularnijiRestorani li {
+    list-style-type: none;
+    margin: 0;
+    border-right: 5px solid #1e90ff;
+    padding: 5px 10px;
+    flex-grow: 1;
+}
+
+ul.najpopularnijiRestorani li:last-child {
+    border-right: none;
+}
+
+table.restorani,
+th,
+td {
+    border: 1px solid lightgray;
+    border-collapse: collapse;
+    border-spacing: 10px;
+    padding: 3px;
+    margin-top: 5px;
+}
+
+table.restorani {
+    width: 500px;
+}
+
+table.restorani tr td:odd {
+    width: 20%;
+}
+
+th {
+    background-color: #1e90ff;
+    color: white;
+    text-align: right;
+    width: 30%;
+}
+
+tr.margina {
+    margin-top: 10px;
+}
+
+table.restorani tr td {
+    width: 70%;
+}
+
+input[type=submit] {
+    width: 100%;
+}
+
+input[type=text],
+input[type=number] {
+    width: 97%;
+}

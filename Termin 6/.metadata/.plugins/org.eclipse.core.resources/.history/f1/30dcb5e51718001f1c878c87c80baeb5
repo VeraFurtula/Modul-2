@@ -1,0 +1,54 @@
+package com.ftninformatika.jwd.modul2.termin6.dostava.service.impl;
+
+import java.util.Collection;
+
+import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
+
+import com.ftninformatika.jwd.modul2.termin6.dostava.dto.KorisnikDTOAddUpdate;
+import com.ftninformatika.jwd.modul2.termin6.dostava.dto.KorisnikDTOGet;
+import com.ftninformatika.jwd.modul2.termin6.dostava.service.KorisnikService;
+
+import jakarta.validation.Valid;
+
+@Service
+@Validated
+public class InMemoryKorisnikService implements KorisnikService {
+
+	@Override
+	public KorisnikDTOGet get(String korisnickoIme) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Collection<KorisnikDTOGet> getAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Collection<KorisnikDTOGet> get(String korisnickoIme, String eMail, String pol, boolean administrator) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void add(@Valid KorisnikDTOAddUpdate korisnikDTO) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void update(@Valid KorisnikDTOAddUpdate korisnikDTO) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void delete(String korisnickoIme) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

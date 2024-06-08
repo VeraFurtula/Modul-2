@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+	<title>Pozivi</title>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col">
+				<nav class="navbar navbar-expand navbar-dark bg-dark">
+				    <div class="navbar-nav">
+						<a class="nav-item nav-link" href="/index.html">Početna</a>
+						<a class="nav-item nav-link active" href="/pozivi">Pozivi</a>
+				    </div>
+				</nav>
+				<nav class="navbar navbar-expand navbar-dark bg-secondary">
+				    <div class="navbar-nav">
+						<a class="nav-item nav-link active" href="/pozivi">Prikaz svih</a>
+						<a class="nav-item nav-link" href="/pozivi/dodavanje">Dodavanje</a>
+				    </div>
+				</nav>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<form th:each="itPoziv: ${pozivi}" th:id="${itPoziv.id}" action="/pozivi/brisanje" method="post">
+					<input type="hidden" name="id" th:value="${itPoziv.id}">
+				</form>
+				<form>
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>Redni broj</th>
+								<th>Datum i vreme</th>
+								<th>Ulica</th>
+								<th>Broj</th>
+								<th>Vozilo</th>
+								<th></th>
+							</tr>
+							<tr class="align-middle"> 
+								<th></th>
+								<th>
+									<div class="input-group">
+										<span class="input-group-text">od</span>
+										<input type="datetime-local" class="form-control" name="datumIVremeOd" th:value="${param.datumIVremeOd}">
+									</div>
+									<div class="input-group">
+										<span class="input-group-text">do</span>
+										<input type="datetime-local" class="form-control" name="datumIVremeDo"  th:value="${param.datumIVremeDo}">
+									</div>
+								</th>
+								<th><input type="text" class="form-control" name="ulica" th:value="${param.ulica}"></th>
+								<th>
+									<div class="input-group">
+										<span class="input-group-text">od</span>
+										<input type="number" class="form-control" name="brojOd" th:value="${param.brojOd}">
+									</div>
+									<div class="input-group">
+										<span class="input-group-text">do</span>
+										<input type="number" class="form-control" name="brojDo" th:value="${param.brojDo}">
+									</div>
+								</th>
+								<th>
+									<select class="form-select" name="voziloId">
+  										<option value="0">sva</option>
+  										<option th:each="itVozilo: ${vozila}" th:value="${itVozilo.id}" th:text="${itVozilo.broj}" th:selected="${#strings.equals(itVozilo.id, param.voziloId)}"></option>
+									</select>
+								</th>
+								<th class="text-center"><input type="submit" class="btn btn-primary" value="Pretraži"></th>
+							</tr>
+						</thead>
+						<tbody class="table-group-divider">
+							<tr th:each="itPoziv, status: ${pozivi}">
+								<td class="text-end" th:text="${status.count}">1</td>
+								<td th:text="${#temporals.format(itPoziv.datumIVreme, 'dd.MM.yyyy. HH:mm')}"></td>
+								<td th:text="${itPoziv.ulica}"></td>
+								<td class="text-end" th:text="${itPoziv.broj}"></td>
+								<td class="text-end" th:text="${itPoziv.vozilo.broj}"></td>
+								<td class="text-center"><button class="btn btn-primary" type=submit th:form="${itPoziv.id}">Obriši</button></td>
+					    	</tr>
+						</tbody>
+					</table>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

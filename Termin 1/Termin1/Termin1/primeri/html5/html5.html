@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html> 
+<html> 
+  <head> 
+    <meta charset="utf-8" /> 
+    <title>HTML5 Presentation</title> 
+  </head>
+<body>
+	
+<form action="pera.html">	
+Required field <input type="text" required />
+<br />
+Email <input type="email" value="some@email.com" /> 
+<br />
+Calendar picker <input type="date" min="2010-08-14" max="2011-08-14" value="2010-08-14"/> 
+<br />
+Telphone patern <input type="tel" placeholder="(555) 555-5555" pattern="^\(?\d{3}\)?[-\s]\d{3}[-\s]\d{4}.*?$" />
+<br />
+Step input <input type="number" step="5" min="-50" max="50" value="5" /> 
+<br />
+Autofocus on Element <input type="text" name="lname" autofocus>
+</br>
+Country code <input type="text" name="country_code" pattern="[A-Za-z]{3}" title="Three letter country code">
+</br>
+Select your favorite color <input type="color" name="favcolor"></br>
+Autocomplete list <input list="browsers">
+<datalist id="browsers">
+  <option value="Internet Explorer">
+  <option value="Firefox">
+  <option value="Chrome">
+  <option value="Opera">
+  <option value="Safari">
+</datalist> 
+</br>
+<input type="submit">
+</form>
+<br />
+Progress bar <progress>working...</progress>
+Download is: working...
+<br />
+Progress <progress value="75" max="100">3/4 complete</progress>
+Goal is: 3/4 complete
+<br />
+<br />
+<br />
+<br />
+Video presentation:<br />
+<video width="320" height="240" controls>
+  <source src="movie.mp4" type="video/mp4">
+  <source src="movie.ogg" type="video/ogg">
+Your browser does not support the video tag.
+</video> 
+<br />
+<br />
+Audio presentation:<br />
+<audio controls>
+  <source src="horse.ogg" type="audio/ogg">
+  <source src="horse.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+
+
+
+</body>
+<html>

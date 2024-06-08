@@ -1,0 +1,36 @@
+body {
+    font-family: Georgia, serif;
+    color: #f03030;
+    background-color: #e0e0e0;
+
+}
+
+.blokSlika p {
+    margin: 0;
+    text-align: center;
+}
+
+span {
+    font-size: 18px;
+}
+
+img.desnoPoravnanje {
+    float: right;
+    border: 1px solid #f03030;
+}
+
+div.uLiniji {
+    display: flex;
+}
+
+.blokSlika {
+    max-width: 150px;
+    border: 1px solid #f03030;
+    margin: 5px;
+    height: max-content;
+}
+
+.blokSlika img {
+    width: 150px;
+    height: 100px;
+}

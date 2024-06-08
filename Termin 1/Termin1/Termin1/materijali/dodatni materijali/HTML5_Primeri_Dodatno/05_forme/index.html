@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1" />
+    <title>HTML5 Presentation</title>
+    <style>
+        [required] {
+            background-color: lightyellow;
+        }
+
+        :invalid {
+            background-color: red;
+        }
+    </style>
+
+</head>
+<body>
+    Required field: <input type="text" required /><br/>
+    Autofocus on Element: <input type="text" name="lname" autofocus><br/>
+    Email: <input type="email" value="some@email.com" /><br/>
+    Calendar picker: <input type="date" min="2010-08-14" max="2011-08-14" value="2010-08-14" /><br/>
+    Time picker: <input type="time" min="18:00" max="21:00" value="18:00" /><br/>
+    Range: Min 0 <input type="range" min="0" max="50" value="10" />Max 50 <br/>
+    Search:<input type="search" results="10" placeholder="Search..." /><br/>
+    Autocomplete list <input list="browsers"><br/>
+    <datalist id="browsers">
+       <option value="Internet Explorer">
+       <option value="Firefox">
+       <option value="Chrome">
+       <option value="Opera">
+       <option value="Opera Mini">
+       <option value="Safari">
+    </datalist>
+    Telphone patern: <input type="tel" placeholder="(555) 555-5555" pattern="^\(?\d{3}\)?[-\s]\d{3}[-\s]\d{4}.*?$" /><br/>
+
+    Step input: <input type="number" step="1" min="-5" max="10" value="0" /><br/>
+
+    Meter: <meter min="0" max="100" low="40" high="80" optimum="100" value="85">A+</meter>
+    Your score is: A+<br />
+    
+    Progress bar: <progress>working...</progress>Download is: working...<br />
+    
+    Progress bar: <progress value="75" max="100">3/4 complete</progress>Goal is: 3/4 complete
+    Color picker: <input type="color" name="favcolor"></br>
+
+
+</body>
+<html>

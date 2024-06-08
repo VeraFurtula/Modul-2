@@ -1,0 +1,26 @@
+package com.ftninformatika.jwd.modul2.termin6.dostava.dto;
+
+
+import com.informatika.jwd.modul2.termin6.dostava.dto.validation.Validation;
+
+import jakarta.validation.constraints.FutureOrPresent;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Positive;
+
+public abstract class ArtikalDTO {
+	@Positive(message = "ID mora biti validan.", groups = {Validation.Update.class})
+	private long id;
+
+	@NotBlank(message = "Naziv ne sme biti prazan.", groups = {Validation.Add.class, Validation.Update.class})
+	private String naziv;
+
+	@NotBlank(message = "Opis ne sme biti prazan.", groups = {Validation.Add.class, Validation.Update.class})
+	private String opis;
+
+	@Positive(message = "Cena mora biti pozitivna.", groups = {Validation.Add.class, Validation.Update.class})
+	private double cena;
+}

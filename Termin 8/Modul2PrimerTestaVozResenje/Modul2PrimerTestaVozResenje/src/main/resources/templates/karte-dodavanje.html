@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+	<script type="text/javascript" src="/js/karte-dodavanje.js"></script>
+	<title>Karte</title>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col">
+				<nav class="navbar navbar-expand navbar-dark bg-dark">
+				    <div class="navbar-nav">
+						<a class="nav-item nav-link" href="/index.html">Početna</a>
+						<a class="nav-item nav-link active" href="/karte">Karte</a>
+				    </div>
+				</nav>
+				<nav class="navbar navbar-expand navbar-dark bg-secondary">
+				    <div class="navbar-nav">
+						<a class="nav-item nav-link" href="/karte">Prikaz svih</a>
+						<a class="nav-item nav-link active" href="/karte/dodavanje">Dodavanje</a>
+				    </div>
+				</nav>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-5 mx-auto">
+				<form action="/karte/dodavanje" method="post">
+					<div class="row my-2">
+						<label class="col-4 col-form-label text-end">Datum i vreme prodaje</label>
+						<div class="col-8">
+							<input type="datetime-local" class="form-control" name="datumIVremeProdaje">
+							<small class="text-danger"></small>
+    					</div>
+  					</div>
+					<div class="row my-2">
+						<label class="col-4 col-form-label text-end">Voz</label>
+						<div class="col-8">
+							<select class="form-select" name="vozId">
+								<option value="0">odaberi</option>
+								<option th:each="itVoz: ${vozovi}" th:value="${itVoz.id}" th:text="|${itVoz.broj}, ${itVoz.rang}, ${#temporals.format(itVoz.datumIVremePolaska, 'dd.MM.yyyy. HH:mm')}|"></option>
+							</select>
+							<small class="text-danger"></small>
+    					</div>
+  					</div>
+					<div class="row my-2">
+						<label class="col-4 col-form-label text-end">Kupac</label>
+						<div class="col-8">
+							<input type="text" class="form-control" name="kupac">
+							<small class="text-danger"></small>
+    					</div>
+  					</div>
+					<div class="row my-2">
+						<label class="col-4 col-form-label text-end">Razred</label>
+						<div class="col-8">
+							<input type="number" class="form-control" name="razred">
+							<small class="text-danger"></small>
+    					</div>
+  					</div>
+  					<div class="row my-2">
+						<div class="col-4"></div>
+						<div class="col-8">
+							<button type="submit" class="btn btn-primary w-100">Dodaj</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

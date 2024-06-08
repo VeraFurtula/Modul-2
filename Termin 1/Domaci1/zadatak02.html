@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadatak2</title>
+</head>
+
+<body>
+    <h1 style="color: blue;">Produženje registracije</h1>
+    <p>Na ovoj stranici možete obaviti produženje registracije Vašeg automobila.<br />
+        Molimo Vas da popunite sledeći formular.</p>
+
+    <form id="forma1" action="zadatak02-druga.html" method="get" accept-charset="UTF-8">
+        <table border="1">
+            <tr>
+                <th colspan="2" align="center" style="color: blue; background-color: lightgrey; border-color: black;">
+                    Produženje registracije
+                </th>
+            </tr>
+            <tr>
+                <td style="background-color: rgb(156, 156, 156);"><label for="forma1_ime">Ime:</label></td>
+                <td><input type="text" name="ime" id="forma1_ime" /></td>
+            </tr>
+            <tr>
+                <td style="background-color: lightgrey;"><label for="forma1_prezime">Prezime:</label></td>
+                <td><input type="text" name="prezime" id="forma1_prezime" /></td>
+            </tr>
+            <tr>
+                <td style="background-color: rgb(156, 156, 156);"><label for="forma1_jmbg">JMBG:</label></td>
+                <td><input type="text" name="jmbg" id="forma1_jmbg" /></td>
+            </tr>
+            <tr style="background-color: lightgrey;">
+                <td><label for="marka_vozila">Marka vozila:</label></td>
+                <td>
+                    <select name="marka_vozila" id="marka_vozila">
+                        <option value="1">Mercedes</option>
+                        <option value="2">Peugeot</option>
+                        <option value="3">Renault</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color: rgb(156, 156, 156);"><label for="forma1_tipvozila">Tip vozila:</label></td>
+                <td><input type="text" name="tipvozila" id="forma1_tipvozila" /></td>
+            </tr>
+            <tr>
+                <td style="background-color: lightgrey;"><label for="forma1_registarskaoznaka">Registarska
+                        oznaka:</label></td>
+                <td><input type="text" name="registarskaoznaka" id="forma1_registarskaoznaka" /></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center" style="background-color: rgb(156, 156, 156);">
+                    <input type="submit" value="Pošalji" />
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <p>U gornjem combo box-u kao stavke nalaze se sledeće vrednosti: <i>Mercedes</i>, <i>Peugeot</i> i <i>Renault</i>.
+    </p>
+
+</body>
+
+</html>

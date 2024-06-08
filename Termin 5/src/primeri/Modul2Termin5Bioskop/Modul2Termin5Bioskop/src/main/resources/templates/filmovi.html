@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+	<title>Filmovi</title>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col">
+				<nav class="navbar navbar-expand navbar-dark bg-dark">
+					<a class="navbar-brand" href="https://enastava.ftninformatika.com">
+				    	<img src="/images/logo.svg">
+					</a>
+				    <div class="navbar-nav">
+						<a class="nav-item nav-link" href="/index.html">Početna</a>
+						<a class="nav-item nav-link" href="/zanrovi">Žanrovi</a>
+						<a class="nav-item nav-link active" href="/filmovi">Filmovi</a>
+						<a class="nav-item nav-link" href="/projekcije">Projekcije</a>
+						<a class="nav-item nav-link" href="/korisnici">Korisnici</a>
+				    </div>
+				</nav>
+				<nav class="navbar navbar-expand navbar-dark bg-secondary">
+				    <div class="navbar-nav">
+						<a class="nav-item nav-link active" href="/filmovi">Prikaz svih</a>
+						<a class="nav-item nav-link" href="/filmovi/dodavanje">Dodavanje</a>
+				    </div>
+				</nav>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>Redni broj</th>
+							<th>Naziv</th>
+							<th>Žanr</th>
+							<th>Trajanje</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody class="table-group-divider">
+						<tr th:each="itFilm, status: ${filmovi}">
+							<td class="text-end" th:text="${status.count}">1</td>
+							<td><a th:href="|/filmovi/prikaz?id=${itFilm.id}|" th:text="${itFilm.naziv}">film 1</a></td>
+							<td>
+								<ul>
+									<li th:each="itZanr: ${itFilm.zanrovi}"><a th:href="|/zanrovi/prikaz?id=${itZanr.id}|" th:text="${itZanr.naziv}">žanr 1</a></li>
+								</ul>
+							</td>
+							<td class="text-end" th:text="${itFilm.trajanje}">100</td>
+							<td><a th:href="|/projekcije?filmId=${itFilm.id}|">projekcije</a></td>
+				    	</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

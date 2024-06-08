@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Build-Jdk-Spec: 17
+Implementation-Title: Bioskop
+Implementation-Version: 0.0.4-SNAPSHOT
+Main-Class: com.ftninformatika.jwd.modul2.termin7.bioskop.Application
+Created-By: Maven Integration for Eclipse
+

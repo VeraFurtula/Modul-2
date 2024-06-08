@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+	<title>Filmovi</title>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col">
+				<nav class="navbar navbar-expand navbar-dark bg-dark">
+					<a class="navbar-brand" href="https://enastava.ftninformatika.com">
+				    	<img src="/images/logo.svg">
+					</a>
+				    <div class="navbar-nav">
+						<a class="nav-item nav-link" href="/index.html">Početna</a>
+						<a class="nav-item nav-link" href="/zanrovi">Žanrovi</a>
+						<a class="nav-item nav-link active" href="/filmovi">Filmovi</a>
+						<a class="nav-item nav-link" href="/projekcije">Projekcije</a>
+						<a class="nav-item nav-link" href="/korisnici">Korisnici</a>
+				    </div>
+				</nav>
+				<nav class="navbar navbar-expand navbar-dark bg-secondary">
+				    <div class="navbar-nav">
+						<a class="nav-item nav-link" href="/filmovi">Prikaz svih</a>
+				    </div>
+				</nav>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-5 mx-auto">
+				<table class="table">
+					<tr><th>Naziv</th><td th:text="${film.naziv}">film 1</td></tr>
+					<tr><th>Trajanje</th><td th:text="${film.trajanje}">100</td></tr>
+					<tr>
+						<th>Žanrovi</th>
+						<td>
+							<ul>
+								<li th:each="itZanr: ${film.zanrovi}"><a th:href="|/zanrovi/prikaz?id=${itZanr.id}|" th:text="${itZanr.naziv}">žanr 1</a></li>
+							</ul>
+						</td>
+					</tr>
+					<tr><th></th><td><a th:href="|/projekcije?filmId=${film.id}|">projekcije</a></td></tr>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
